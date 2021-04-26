@@ -4,7 +4,7 @@
 # ## Problem 1 - Simple temperature calculator (*3 points*)
 # 
 # In the first problem your aim is to create a function that converts the input temperature from degrees Fahrenheit to degrees Celsius. The conversion formula from Fahrenheit to Celsius can be found below.
-# 
+print("32 degrees Fahrenheit in Celsius is:", fahr_to_celsius(32))
 #   T_{Celsius} = ( T_{Fahrenheit} - 32 ) / 1.8
 # 
 # Notice: Closely follow the instructions! 
@@ -19,13 +19,20 @@
 # - Adding comments in your code and a docstring that explains how to use your `fahr_to_celsius` function (i.e., you should write the purpose of the function, parameters, and returned values)
 
 # YOUR CODE HERE
-
-# ### Problem 1 tests
-# 
+raise NotImplementedError()
+# ## Problem 1 tests
+import inspect
+#Check that function exists
+assert inspect.isfunction(fahr_to_celsius),'Fahr_to celsius should be a function'
+#Check that the function has a single parameter and the parameter name is correct
+params =list(inspect.signature(fahr_to_celsius).parameters.keys())
+assert len(params)==1,'The function should have one parameter'
+assert params[0]=='temp_fahrenheit','The parameter name should be "temp_fahrenheit".'
 # Check that the function produces correct answers for:
 # 1. What is 48° Fahrenheit in Celsius? 
+assert round(fahr_to_celsius(48),2)==8.89
 # 2. What about 71° Fahrenheit in Celsius?
-
+assert round(fahr_to_celsius(71),2)==21.67
 # ### Check your code
 # 
 # - Make sure you used the given variable names
